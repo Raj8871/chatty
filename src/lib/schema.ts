@@ -29,7 +29,9 @@ export const RecoverPasskeySchema = z.object({
 export type RecoverPasskeyFormValues = z.infer<typeof RecoverPasskeySchema>;
 
 export const InviteCodeSchema = z.object({
-  code: z.string().length(8, { message: "Invite code must be 8 characters." }),
+  code: z.string()
+    .length(8, { message: "Invite code must be 8 characters." })
+    .transform(val => val.toUpperCase()), // Convert to uppercase
 });
 export type InviteCodeFormValues = z.infer<typeof InviteCodeSchema>;
 
