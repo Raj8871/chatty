@@ -16,6 +16,7 @@ import { UpdatePasskeySchema, type UpdatePasskeyFormValues } from "@/lib/schema"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { HelpCircle } from "lucide-react";
+import { useState } from "react"; // Added useState import
 
 interface UpdatePasskeyModalProps {
   isOpen: boolean;
