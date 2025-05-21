@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -53,12 +54,19 @@ export function LoginForm() {
           {isLoading ? "Logging in..." : "Login"}
         </Button>
       </form>
-      <p className="mt-6 text-center text-sm text-muted-foreground">
-        Don&apos;t have an account?{" "}
-        <Link href="/signup" className="font-medium text-primary hover:underline">
-          Sign Up
-        </Link>
-      </p>
+      <div className="mt-6 space-y-2 text-center text-sm text-muted-foreground">
+        <p>
+          Don&apos;t have an account?{" "}
+          <Link href="/signup" className="font-medium text-primary hover:underline">
+            Sign Up
+          </Link>
+        </p>
+        <p>
+          <Link href="/recover-passkey" className="font-medium text-primary hover:underline">
+            Forgot your pass key?
+          </Link>
+        </p>
+      </div>
     </Form>
   );
 }

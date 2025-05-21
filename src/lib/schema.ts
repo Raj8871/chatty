@@ -20,6 +20,14 @@ export const UpdatePasskeySchema = z.object({
 });
 export type UpdatePasskeyFormValues = z.infer<typeof UpdatePasskeySchema>;
 
+export const RecoverPasskeySchema = z.object({
+  email: z.string().email({ message: "Invalid email address." }),
+  answer1: z.string().min(5, { message: "Security answer must be at least 5 characters." }),
+  answer2: z.string().min(5, { message: "Security answer must be at least 5 characters." }),
+  answer3: z.string().min(5, { message: "Security answer must be at least 5 characters." }),
+});
+export type RecoverPasskeyFormValues = z.infer<typeof RecoverPasskeySchema>;
+
 export const InviteCodeSchema = z.object({
   code: z.string().length(8, { message: "Invite code must be 8 characters." }),
 });
@@ -35,4 +43,3 @@ export const MessageSchema = z.object({
   path: ["text"], // Attach error to a common field or the first field
 });
 export type MessageFormValues = z.infer<typeof MessageSchema>;
-
